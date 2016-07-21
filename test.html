@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="title" content="The UMass Medical School App">
+    <meta name="description" content="The official app of the University of Massachusetts Medical School">
+
+    <link rel="stylesheet" href="styles/vendor/foundation.css" />
+    <link rel="stylesheet" href="styles/vendor/animate.css" />
+    <link rel="stylesheet" href="styles/app.css" />
+  </head>
+  <body>
+
+    <header id="hero-header">
+      <div class="row">
+        <div class="large-12 columns">
+          <a href="#download"><img src="images/app-icon.png" id="app-icon" class="animated zoomInDown"/></a>
+          <h1 class="text-center"><strong>The Insight App</strong></h1>
+          <h5 class="text-center">Everything you need,<br>in the palm of your hand.</h5>
+        </div>
+      </div>
+      <div class="spacer"></div>
+      <div class="spacer"></div>
+    </header>
+
+    <section id="showcase">
+      <div class="spacer"></div>
+      <section id="main-content">
+        <div class="row">
+          <div class="large-12 columns text-center">
+            <h2>What's it for?</h2>
+            <div class="spacer"></div>
+            <div class="spacer"></div>
+          </div>
+        </div>
+        <div class="row text-center">
+          <div class="medium-3 large-3 columns supporticons">
+            <img src="images/icons/genius.png"/>
+            <h4>Labs</h4>
+            <p>Hand-picked videos from our "Lab of the Week" series at your fingertips.</p>
+          </div>
+          <div class="medium-3 large-3 columns supporticons">
+            <img src="images/icons/phone.png"/>
+            <h4>Contacts</h4>
+            <p>Quick access to facilities requests, help desk, &amp; emergency services.</p>
+          </div>
+          <div class="medium-3 large-3 columns supporticons">
+            <img src="images/icons/location.png"/>
+            <h4>Maps<br>(coming soon)</h4>
+            <p>Indoors or outdoors, our in-app maps will help you get where you're going.</p>
+          </div>
+          <div class="medium-3 large-3 columns supporticons">
+            <img src="images/icons/caution.png"/>
+            <h4>Alerts<br>(coming soon)</h4>
+            <p>Be the first to know when there's an emergency or classes are cancelled.</p>
+          </div>
+        </div>
+      </section>
+      <div class="spacer"></div>
+      <div class="spacer"></div>
+    </section>
+
+    <section id="download" class="text-center">
+      <div class="spacer"></div>
+      <div class="row">
+        <div class="large-12 columns">
+          <h2>Want the app?</h2>
+          <h4>Choose your platform:</h4>
+        </div>
+        <div class="large-12 columns">
+          <ul class="small-block-grid-2 medium-block-grid-2">
+            <li class="ios-l"><a href="#" onclick="downloadiOS()" class="hide-text">Download for iOS</a></li>
+            <li class="android-l"><a href="#" onclick="downloadAndroid()" class="hide-text">Download for Android</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="spacer"></div>
+    </section>
+
+    <script src="scripts/vendor/jquery.js"></script>
+    <script src="scripts/vendor/foundation.min.js"></script>
+    <script src="scripts/app.js"></script>
+
+    <!-- Google Analytics; do not move/remove -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                              })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-49717923-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <script>
+      function downloadiOS() {
+        alert("\nAfter tapping to install, the app will start downloading in the background. Please check your homescreen and tap \"Trust\" when asked.")
+
+        window.location.href = "itms-services://?action=download-manifest&url=https://tjk1021.github.io/mindfulness.plist";
+        showAdvice();
+      }
+
+      function downloadAndroid() {
+        alert("\nBefore installing, you'll need to allow this app by checking Settings -> Security -> Device Admin / Unknown Sources.")
+
+        window.location.href = "https://m.umassmed.edu/umms-app/app.apk";
+        showAdvice();
+      }
+
+      function showAdvice() {
+
+      }
+
+      $(document).ready(function(){
+          $('a[href^="#"]').click(function(e) {
+              e.preventDefault();
+              var target = this.hash, $target = $(target);
+              $('html, body').stop().animate({
+                  'scrollTop': $target.offset().top
+              }, 900, 'swing', function() {
+                  window.location.hash = target;
+              });
+          });
+      });
+    </script>
+
+  </body>
+</html>
